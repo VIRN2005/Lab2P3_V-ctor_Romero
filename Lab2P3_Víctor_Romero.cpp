@@ -1,20 +1,83 @@
-// Lab2P3_Víctor_Romero.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+// Métodos 2ndo Ejercicio
+int Factorial(int n) {
+	if (n == 0) { // Caso base
+		return 1;
+	}
+	else { // Recursiva
+		return n * Factorial(n - 1);
+	}
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void Triangulo(int n) {
+	for (int row = 0; row < n; row++) {
+		for (int column = 0; column <= row; column++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+int menu() {
+	int opcion = 0;
+
+	do {
+		cout << "------- MENU ------- \n"
+			<< "1) Ordenamiento y omisión en arreglos \n"
+			<< "2) Factoriales y figuras \n\n"
+
+			<< "0) SALIDA \n\n";
+
+		cout << ">> Ingrese una opcion del menu: ";
+		cin >> opcion;
+
+		cout << "La opcion escojida es :" << opcion << endl << endl;
+
+		switch (opcion) {
+		case 0: {
+			cout << "Gracias por participar!\n"
+				<< "Feliz dia :D";
+		}
+			  break;
+
+		case 1: {
+			cout << "- 1) Ordenamiento y omisión en arreglos - \n";
+
+		}
+			  break;
+
+		case 2: {
+			cout << "- 2) Factoriales y figuras - \n";
+
+			cout << ">> Ingrese el Numero del Factorial: ";
+			int num;
+			cin >> num;
+
+			cout << "El factorial de " << num << " es " << num * Factorial(num - 1) << endl;
+			Triangulo(Factorial(num));
+
+		}
+			  break;
+
+		default: {
+			cout << "Valor digitado no es valido\n";
+		}
+			   break;
+
+		}
+
+	} while (opcion != 0);
+
+	return opcion;
+}
+
+int main() {
+	cout << "Victor I. Romero N. - 12211079" << endl
+		<< "Lab 1 - Programacion 3" << endl << endl;
+
+	menu();
+
+}
