@@ -23,7 +23,7 @@ void Array() {
 	}
 	cout << endl << endl;
 
-	cout << "Arreglo Ordenado: ";
+	cout << "Arreglo Ordenado y Sin Repetir: ";
 	for (int i = 0; i < 10; i++) {
 		for (int j = i + 1; j < 10; j++) {
 			if (arreglo[i] > arreglo[j]) {
@@ -35,7 +35,9 @@ void Array() {
 	}
 
 	for (int i = 0; i < 10; i++) {
-		cout << arreglo[i] << "  ";
+		if (arreglo[i] != arreglo[i + 1]) {
+			cout << arreglo[i] << "  ";
+		}
 	}
 	cout << endl << endl;
 }
